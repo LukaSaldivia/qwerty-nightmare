@@ -1,0 +1,116 @@
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input#keyDetector{
+    aspect-ratio: 1/1;
+    width: 3rem;
+    text-align: center;
+    background-color: black;
+    border-style: none;
+    border-radius: 50%;
+    color: black;
+
+}
+
+input#keyDetector:focus{
+    
+    border: .5rem double #47d;
+    animation: idle .5s infinite alternate ease-in-out;
+}
+
+@keyframes idle{
+    to{
+        border-color: #7af;
+    }
+}
+
+div#fraseOriginal{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .2rem;
+    font-weight: bolder;
+    background-color: black;
+    color: white;
+    padding: 2rem;
+}
+
+div#fraseOriginal > div {
+    width: .8rem;
+    aspect-ratio: 1/1;
+    text-align: center;
+    transition: scale .2s;
+    text-shadow: 0 0 8px currentColor;
+}
+
+div#fraseOriginal > div.espacio.red {
+    background-color: red;
+}
+div#fraseOriginal > div.espacio.green {
+    background-color: green;
+}
+
+
+div#fraseOriginal > div.red {
+    color: red;
+    animation: error .3s infinite ease-out;
+}
+div#fraseOriginal > div.green {
+    color: green;
+    animation: right .8s infinite ease-out alternate;
+}
+div#fraseOriginal > div.active {
+    background-color: #222;
+    scale: 1.1;
+}
+
+@keyframes error{
+    to{
+        translate: .1rem;
+        opacity: .7;
+    }
+}
+@keyframes right{
+    to{
+        filter: brightness(1.5);
+    }
+}
+
+
+div#progressBar{
+    position: relative;
+    width: 60%;
+    height: 2rem;
+    background-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid black;
+}
+
+span#bar{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    scale: 1 1;
+    transform-origin: left;
+
+}
+
+
+div#key{
+    font-size: 5rem;
+}
