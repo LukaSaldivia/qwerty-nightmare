@@ -9,6 +9,7 @@ body{
     display: grid;
     place-items: center;
     font-family: 'Courier New', Courier, monospace;
+    background-color: white;
 }
 
 input#keyDetector{
