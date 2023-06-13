@@ -28,16 +28,22 @@ fraseArr.forEach(e => {
     document.querySelector('#fraseOriginal').innerHTML += `<div>${e}</div>`;
 });
 
+function inputChange(el) {
+    console.log(el.value);
+}
 
 
-
-keyDetector.addEventListener('keypress',(e) =>{
-
-    keyDetector.value = '';
+keyDetector.addEventListener('keydown',(e) =>{
+    
     if(continua){
-    if(index < largoFrase){
-        reloj.start();
+        if(index < largoFrase){
+            if(e.key.length == 1){
+                reloj.start();
+
+            
         let userInput = e.key;
+        keyDetector.value = '';
+
         let originalLetter = fraseArr[index];
 
         divFrase.children[index].classList.add('green')
@@ -59,10 +65,11 @@ keyDetector.addEventListener('keypress',(e) =>{
         }
 
         document.querySelector('#accuracy').innerHTML = `${Math.floor(((index+1-errores)/largoFrase)*100)}%`
-        document.querySelector('#key').innerHTML = e.key
+        document.querySelector('#key').innerHTML = userInput
 
         updateSpan(index,userInput)
         index++;
+    }
     }
 
     if(index == largoFrase){
