@@ -33,15 +33,14 @@ function inputChange(el) {
 }
 
 
-keyDetector.addEventListener('keydown',(e) =>{
+
+keyDetector.addEventListener('input',(e) =>{
     
     if(continua){
         if(index < largoFrase){
-            if(e.key.length == 1){
-                reloj.start();
+            reloj.start();
 
-            
-        let userInput = e.key;
+        let userInput = e.target.value;
         keyDetector.value = '';
 
         let originalLetter = fraseArr[index];
@@ -69,7 +68,6 @@ keyDetector.addEventListener('keydown',(e) =>{
 
         updateSpan(index,userInput)
         index++;
-    }
     }
 
     if(index == largoFrase){
