@@ -36,13 +36,13 @@ function inputChange(el) {
 
 keyDetector.addEventListener('input',(e) =>{
 
-    keyDetector.value = '';
     
     if(continua){
         if(index < largoFrase){
             reloj.start();
-
-        let userInput = e.target.value;
+            
+            let userInput = e.target.value;
+            keyDetector.value = '';
 
 
         let originalLetter = fraseArr[index];
