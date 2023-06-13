@@ -19,6 +19,8 @@ input#keyDetector{
     border-style: none;
     border-radius: 50%;
     color: black;
+    position: absolute;
+    top: .5rem;
 
 }
 
