@@ -21,6 +21,7 @@ input#keyDetector{
     color: black;
     position: absolute;
     top: .5rem;
+    text-transform: lowercase;
 
 }
 
