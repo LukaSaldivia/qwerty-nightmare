@@ -5,7 +5,7 @@ let divFrase = document.querySelector('#fraseOriginal');
 let keyDetector = document.querySelector('#keyDetector');
 
 
-const frase = "El veloz murciélago hindú comía feliz kiwi. La cachorra tocaba el saxofón con queso entre los dientes. La jauría vistante lo notó."
+const frase = "El veloz murciélago hindú comía feliz kiwi. La cachorra tocaba el saxofón con queso entre los dientes. La jauría visitante lo notó."
 
 let fraseArr = frase.split('');
 let largoFrase = frase.length;
